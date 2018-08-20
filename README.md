@@ -19,7 +19,7 @@
 ##### 全局配置
 ```javascript
 $.toastr.config({
-  timeOut: 3000,
+  time: 3000,
   position: 'top-right',
   size: '',
   callback: function () {}
@@ -85,7 +85,7 @@ $.toastr.info('有新消息了', {
 ##### 显示一个警告通知，1秒后关闭
 ```javascript
 $.toastr.warning('警告，禁止操作!', {
-    timeOut: 1000
+    time: 1000
 });
 ```
 

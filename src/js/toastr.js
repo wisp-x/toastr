@@ -11,7 +11,7 @@ $.extend({
   toastr: {
     // 惯例配置
     options: {
-      timeOut: 3000, // 关闭时间(毫秒)
+      time: 3000, // 关闭时间(毫秒)
       position: 'top-right', // 位置 ['top-left', 'top-center', 'top-right', 'right-bottom', 'bottom-center', 'left-bottom']
       size: '', // 大小 ['lg', 'sm', 'xs']
       callback: function () { // 默认关闭后的回调
@@ -49,7 +49,7 @@ $.extend({
       var self = this;
       msg = msg || 'null';
       options = options || {};
-      var timeOut = options.timeOut ? options.timeOut : this.options.timeOut,
+      var time = options.time ? options.time : this.options.time,
         position = options.position ? options.position : this.options.position,
         size = options.size ? options.size : this.options.size,
         callback = options.callback ? options.callback : this.options.callback;
@@ -72,7 +72,7 @@ $.extend({
           clearTimeout(timer);
           li.unbind('click');
           self.close(li, fadeOut, callback);
-        }, timeOut);
+        }, time);
 
       // 绑定单击事件关闭
       li.click(function () {

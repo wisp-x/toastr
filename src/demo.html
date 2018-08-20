@@ -102,7 +102,7 @@
     <tr>
       <td align="right">关闭时间</td>
       <td align="left">
-        <input type="number" id="timeout" placeholder="关闭时间(毫秒)" value="3000">毫秒
+        <input type="number" id="time" placeholder="关闭时间(毫秒)" value="3000">毫秒
       </td>
     </tr>
     <tr>
@@ -127,7 +127,7 @@
   $(function () {
     $.toastr.config({
       // 设置默认关闭时间为5秒
-      timeOut: 5000
+      time: 5000
     });
     setTimeout(function () {
       $.toastr.success('成功', {position: 'top-left'});
@@ -139,7 +139,7 @@
       $('.test').click(function () {
         $.toastr[$('#type').val()]($('#msg').val(), {
           position: $('#position').val(),
-          timeOut: $('#timeout').val(),
+          time: $('#time').val(),
           size: $('#size').val()
         });
       });
