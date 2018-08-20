@@ -89,10 +89,10 @@ $.toastr.warning('警告，禁止操作!', {
 });
 ```
 
-##### 显示一个大小为lg的失败通知
+##### 显示一个大小为sm的失败通知
 ```javascript
 $.toastr.error('执行失败!', {
-    size: 'lg'
+    size: 'sm'
 });
 ```
 
