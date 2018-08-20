@@ -38,7 +38,7 @@ $.toastr.config({
     </thead>
     <tbody>
     <tr>
-        <td>timeOut</td>
+        <td>time</td>
         <td>关闭时间(毫秒)</td>
         <td>1000~999999之间的纯数字</td>
         <td>3000</td>
