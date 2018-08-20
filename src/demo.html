@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>toastr</title>
+  <link rel="stylesheet" href="css/toastr.css">
+</head>
+<body>
+<style>
+  *, *:before, *:after {
+    box-sizing: border-box;
+  }
+
+  h4 {
+    margin: 10px 0;
+  }
+
+  .container {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    border: 1px solid #999;
+    width: 800px;
+    margin: 0 auto;
+    padding: 15px;
+  }
+
+  #msg {
+    width: 300px;
+  }
+</style>
+<div class="container">
+  <h4>Toastr</h4>
+  <select id="type">
+    <option value="success">success</option>
+    <option value="info">info</option>
+    <option value="warning">warning</option>
+    <option value="error">error</option>
+  </select>
+  <select id="position">
+    <option value="top-left">top-left(左上)</option>
+    <option value="top-right">top-right(右上)</option>
+    <option value="right-bottom">right-bottom(右下)</option>
+    <option value="left-bottom">left-bottom(左下)</option>
+    <option value="top-center">top-center(中上)</option>
+    <option value="bottom-center">bottom-center(中下)</option>
+  </select>
+  <input type="number" id="timeout" placeholder="关闭时间(毫秒)" value="3000">
+  <input type="text" id="msg" placeholder="输入提示内容" value="点击测试试试吧~">
+  <button class="test">测试</button>
+</div>
+</body>
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/toastr.min.js"></script>
+<script>
+  $.toastr.options.timeOut = 5000;
+  $.toastr.success('成功', {position: 'top-left'});
+  $.toastr.info('信息', {position: 'left-bottom'});
+  $.toastr.warning('警告', {position: 'top-right'});
+  $.toastr.error('测试', {position: 'right-bottom'});
+  $.toastr.info('中上', {position: 'top-center'});
+  $.toastr.info('中下', {position: 'bottom-center'});
+  $('.test').click(function () {
+    $.toastr[$('#type').val()]($('#msg').val(), {
+      position: $('#position').val(),
+      timeOut: $('#timeout').val()
+    });
+  });
+</script>
+</html>
