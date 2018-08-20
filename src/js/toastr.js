@@ -81,7 +81,7 @@ $.extend({
       });
     },
     /**
-     * 关闭Toast
+     * 关闭Toastr
      * @param li        li元素
      * @param fadeOut   关闭动画
      * @param callback  关闭后的回调
