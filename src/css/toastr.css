@@ -77,11 +77,32 @@ body {
 .toastr-container ul li:before {
   position: absolute;
   font-family: "iconfont";
-  top: 50%;
+  top: 51%;
   transform: translateY(-50%);
   color: white;
   left: 8px;
   font-size: 25px;
+}
+.toastr-container ul li.lg {
+  font-size: 17px;
+  padding: 15px 15px 15px 45px;
+}
+.toastr-container ul li.lg:before {
+  font-size: 31px;
+}
+.toastr-container ul li.sm {
+  font-size: 13px;
+  padding: 8px 8px 8px 34px;
+}
+.toastr-container ul li.sm:before {
+  font-size: 20px;
+}
+.toastr-container ul li.xs {
+  font-size: 12px;
+  padding: 5px 5px 5px 27px;
+}
+.toastr-container ul li.xs:before {
+  font-size: 14px;
 }
 .toastr-container ul li.toastr-success {
   background-color: #73b575;

@@ -12,10 +12,20 @@ $.extend({
   toastr: {
     // 惯例配置
     options: {
-      timeOut: 3000,
-      position: 'top-right',
-      callback: function () {
+      timeOut: 3000, // 关闭时间(毫秒)
+      position: 'top-right', // 位置 ['top-left', 'top-center', 'top-right', 'right-bottom', 'bottom-center', 'left-bottom']
+      size: '', // 大小 ['lg', 'sm', 'xs']
+      callback: function () { // 默认关闭后的回调
       }
+    },
+    /**
+     * 设置配置
+     * @param options
+     */
+    config: function (options) {
+      Object.keys(options).forEach(function (key) {
+        this.options[key] = options[key];
+      }.bind(this));
     },
     /**
      * Toastr容器
@@ -28,14 +38,6 @@ $.extend({
       if (!container.hasClass(position)) {
         $('body').append('<div class="toastr-container ' + position + '"><ul></ul></div>');
       }
-      setTimeout(function () {
-        // 清除空容器
-        container.each(function (i, v) {
-          if ($(v).find('ul li').length <= 0) {
-            $(v).remove();
-          }
-        });
-      }, 500);
       return $('body .toastr-container.' + position);
     },
     /**
@@ -50,6 +52,7 @@ $.extend({
       options = options || {};
       var timeOut = options.timeOut ? options.timeOut : this.options.timeOut,
         position = options.position ? options.position : this.options.position,
+        size = options.size ? options.size : this.options.size,
         callback = options.callback ? options.callback : this.options.callback;
 
       // 开始和结束动画
@@ -62,14 +65,15 @@ $.extend({
         'left-bottom': {fadeIn: 'left', fadeOut: 'bottom'}
       }, id = 'toastr-' + new Date().getTime();
 
-      this.container(position).find('> ul').prepend('<li class="fade-in-' + fades[position].fadeIn + ' ' + id + ' toastr-' + type + '">' + msg + '</li>');
+      this.container(position).find('> ul').prepend('<li class="' + size + ' fade-in-' + fades[position].fadeIn + ' ' + id + ' toastr-' + type + '">' + msg + '</li>');
 
       // 定时关闭
-      var li = this.container(position).find('.' + id), fadeOut = 'fade-out-' + fades[position].fadeOut, timer = setTimeout(function () {
-        clearTimeout(timer);
-        li.unbind('click');
-        self.close(li, fadeOut, callback);
-      }, timeOut);
+      var li = this.container(position).find('.' + id), fadeOut = 'fade-out-' + fades[position].fadeOut,
+        timer = setTimeout(function () {
+          clearTimeout(timer);
+          li.unbind('click');
+          self.close(li, fadeOut, callback);
+        }, timeOut);
 
       // 绑定单击事件关闭
       li.click(function () {
@@ -90,6 +94,14 @@ $.extend({
       }, 500);
       // 执行关闭回调
       callback();
+      setTimeout(function () {
+        // 清除空容器
+        $('body .toastr-container').each(function (i, v) {
+          if ($(v).find('ul li').length <= 0) {
+            $(v).remove();
+          }
+        });
+      }, 500);
     },
     /**
      * 清除所有Toastr
