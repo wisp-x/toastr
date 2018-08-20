@@ -15,10 +15,16 @@
     font-size: 14px;
   }
 
-  h4 {
+  h2 {
     margin: 10px 0;
     padding-bottom: 5px;
     border-bottom: 1px solid #eee;
+  }
+
+  h2 small {
+    margin-left: 10px;
+    font-size: 13px;
+    color: #999;
   }
 
   .container {
@@ -49,7 +55,9 @@
   }
 </style>
 <div class="container">
-  <h4>Toastr</h4>
+  <h2>Toastr
+    <small>用法请参阅 <a href="https://gitee.com/wispx/toastr/blob/master/README.md">README.md</a></small>
+  </h2>
   <table>
     <tbody>
     <tr>
@@ -100,7 +108,7 @@
       </td>
     </tr>
     <tr>
-      <td align="right"> </td>
+      <td align="right"></td>
       <td align="left">
         <button class="test">测试</button>
       </td>
@@ -112,22 +120,26 @@
 <script src="js/jquery-3.3.1.min.js"></script>
 <script src="js/toastr.min.js"></script>
 <script>
-  $.toastr.config({
-    // 设置默认关闭时间为5秒
-    timeOut: 5000
-  });
-  $.toastr.success('成功', {position: 'top-left'});
-  $.toastr.info('信息', {position: 'left-bottom'});
-  $.toastr.warning('警告', {position: 'top-right'});
-  $.toastr.error('测试', {position: 'right-bottom'});
-  $.toastr.info('中上', {position: 'top-center'});
-  $.toastr.info('中下', {position: 'bottom-center'});
-  $('.test').click(function () {
-    $.toastr[$('#type').val()]($('#msg').val(), {
-      position: $('#position').val(),
-      timeOut: $('#timeout').val(),
-      size: $('#size').val()
+  $(function () {
+    $.toastr.config({
+      // 设置默认关闭时间为5秒
+      timeOut: 5000
     });
-  });
+    setTimeout(function () {
+      $.toastr.success('成功', {position: 'top-left'});
+      $.toastr.info('信息', {position: 'left-bottom'});
+      $.toastr.warning('警告', {position: 'top-right'});
+      $.toastr.error('测试', {position: 'right-bottom'});
+      $.toastr.info('中上', {position: 'top-center'});
+      $.toastr.info('中下', {position: 'bottom-center'});
+      $('.test').click(function () {
+        $.toastr[$('#type').val()]($('#msg').val(), {
+          position: $('#position').val(),
+          timeOut: $('#timeout').val(),
+          size: $('#size').val()
+        });
+      });
+    }, 1000);
+  })
 </script>
 </html>
