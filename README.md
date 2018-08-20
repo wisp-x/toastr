@@ -4,7 +4,7 @@
 无堵塞消息通知插件
 
 ### Demo
-[Demo](https://wispx.gitee.io/toastr/demo.html)
+<a href="https://wispx.gitee.io/toastr/demo.html" target="_blank">Demo</a>
 
 ### 使用方法
 注意 本插件依赖Jquery
@@ -27,7 +27,7 @@ $.toastr.config({
 ```
 
 配置说明：
-<table>
+<table width="100%">
     <thead>
     <tr>
         <th>配置名</th>
