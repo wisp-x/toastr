@@ -3,7 +3,6 @@
  *
  * Copyright Wisp X
  * Released under the MIT license
- * https://jquery.org/license
  *
  * Date: 2018-08-20 16:50
  * Link: https://gitee.com/wispx
