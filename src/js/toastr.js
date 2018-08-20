@@ -87,7 +87,7 @@ $.extend({
       li.addClass(fadeOut);
       setTimeout(function () {
         li.remove();
-      }, 400);
+      }, 500);
       // 执行关闭回调
       callback();
     },
