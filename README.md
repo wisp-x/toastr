@@ -4,7 +4,7 @@
 无堵塞消息通知插件
 
 ### 演示
-<a href="https://wispx.gitee.io/toastr/demo.html" target="_blank">Demo</a>
+<a href="https://wispx.gitee.io/toastr/demo.html" target="_blank">https://wispx.gitee.io/toastr/demo.html</a>
 
 ### 使用方法
 注意 本插件依赖Jquery
