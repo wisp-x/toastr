@@ -61,7 +61,7 @@ $.extend({
         'top-right': {fadeIn: 'right', fadeOut: 'right'},
         'right-bottom': {fadeIn: 'right', fadeOut: 'right'},
         'bottom-center': {fadeIn: 'top', fadeOut: 'bottom'},
-        'left-bottom': {fadeIn: 'left', fadeOut: 'bottom'}
+        'left-bottom': {fadeIn: 'left', fadeOut: 'left'}
       }, id = 'toastr-' + new Date().getTime();
 
       this.container(position).find('> ul').prepend('<li class="' + size + ' fade-in-' + fades[position].fadeIn + ' ' + id + ' toastr-' + type + '">' + msg + '</li>');
