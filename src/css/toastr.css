@@ -12,6 +12,7 @@
 }
 .toastr-container {
   position: fixed;
+  z-index: 1121;
   word-break: break-all;
   word-wrap: break-word;
 }

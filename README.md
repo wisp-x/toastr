@@ -1,7 +1,7 @@
 # Toastr
 
 ### 项目介绍
-无堵塞消息通知插件
+非堵塞消息通知插件
 
 ### 演示
 <a href="https://wispx.gitee.io/toastr/demo.html" target="_blank">https://wispx.gitee.io/toastr/demo.html</a>
