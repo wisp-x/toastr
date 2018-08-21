@@ -3,7 +3,7 @@
 ### 项目介绍
 无堵塞消息通知插件
 
-### Demo
+### 演示
 <a href="https://wispx.gitee.io/toastr/demo.html" target="_blank">Demo</a>
 
 ### 使用方法
